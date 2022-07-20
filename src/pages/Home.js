@@ -60,7 +60,6 @@ function Home() {
            setStep({step:1});
 
        }
-
     }
 
     useEffect(() => {
