@@ -128,9 +128,9 @@ function Home() {
                         <div className="h-6" />
                         {claim == "false" && currentStep===3  ? query.get("address") == "null" ? <button onClick={() => { FiToken.postMessage(JSON.stringify({ type: "setup_wallet" })) }} className="w-full bg-[#500EC1] h-[44px] rounded-3xl text-white font-medium text-center items-center justify-center flex">
                             <span>Claim  <img className="inline" src="/assets/fi-logo.svg" alt="logo-fi" /> 10 FiCafe tokens</span>
-                        </button> : <Link to={`/captcha?accountName=${query.get("accountName")}&address=${query.get("address")}`} className="w-full bg-[#500EC1] h-[44px] rounded-3xl text-white font-medium text-center items-center justify-center flex">
+                        </button> : <div onClick={() => { FiToken.postMessage(JSON.stringify({ type: "checkCountry" })) }} to={`/captcha?accountName=${query.get("accountName")}&address=${query.get("address")}`} className="w-full bg-[#500EC1] h-[44px] rounded-3xl text-white font-medium text-center items-center justify-center flex">
                             <span>Claim  <img className="inline" src="/assets/fi-logo.svg" alt="logo-fi" /> 10 FiCafe tokens</span>
-                        </Link> : <button className="w-full bg-[#8089A9] h-[44px] rounded-3xl text-white font-medium text-center items-center justify-center flex">
+                        </div> : <button className="w-full bg-[#8089A9] h-[44px] rounded-3xl text-white font-medium text-center items-center justify-center flex">
                             <span>Claim  <img className="inline" src="/assets/fi-logo.svg" alt="logo-fi" /> 10 FiCafe tokens</span>
                         </button>}
                         <div className="h-10" />
@@ -249,18 +249,18 @@ function Home() {
                             <div className="h-3" />
                             <div className="flex flex-row">
                                 <div className="pl-1 pr-2">•</div>
-                                <p>All transaction will be run on BNB Chain.</p>
+                                <p>All transaction will be run on BNB Smart Chain.</p>
                             </div>
                         </div>
                         <div className="h-10" />
                         <p className="font-semibold">Share</p>
                         <div className="h-[6px]" />
                         <div className="flex flex-col py-[18px] px-4 bg-[#F6F7FB] rounded-[6px]">
-                            <div onClick={() => { window.open("https://twitter.com/Fizen_CryptoApp"); }} className="flex flex-row justify-between cursor-pointer">
+                            <div onClick={() => { window.open("https://twitter.com/fizenwallet"); }} className="flex flex-row justify-between cursor-pointer">
                                 <div className="flex flex-row">
                                     <img src="/assets/twitter.svg" alt="Twitter" />
                                     <div className="w-3" />
-                                    <p className="text-[#5D5FEF] text-[13px] underline">@Fizen_CryptoApp</p>
+                                    <p className="text-[#5D5FEF] text-[13px] underline">@fizenwallet</p>
                                 </div>
                                 <img src="/assets/forward.svg" alt="Forward" />
                             </div>
